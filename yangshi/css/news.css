@@ -1,0 +1,72 @@
+.w-news{width:6.4rem;margin:0 auto;overflow: hidden;}
+.newstj{width:4rem;border-left: 0.06rem solid #ff6501;padding-left: 0.14rem;padding-top:0.05rem;margin:0.25rem 0rem 0.13rem 0.2rem;}
+.newsgd{display: inline-block;margin:0.35rem 0.12rem 0.13rem 0rem;}
+.news,.pinglun{width:6.23rem;margin:0 auto;overflow: hidden;}
+.newslist{border-top:0.01rem solid #e3e3e3;}
+.newstu{padding:0.12rem 0.17rem 0.06rem 0.06rem;}
+.newstit{display:block;margin-top:0.3rem;font-weight: bold;color: #3b3b3b;}
+.newscon{width:3.08rem;padding-right: 0.82rem;margin-top:0.13rem;}
+/*======================新闻详情==========================*/
+.newsdetailshead{margin:0.23rem 0rem 0.20rem 0.15rem; }
+.newsdate{margin-left: 0.15rem;}
+.newstime{margin-left: 0.08rem}
+.newslaiyuan{margin-left: 0.09rem}
+.newsjizhe{margin-left: 0.34rem}
+.newsbofangliang{margin-right: 0.09rem}
+.newsshipin{margin:0.22rem 0rem 0.26rem 0rem;width: 6.4rem;height: 3.2rem;}
+.c{color:#656565;line-height: 0.23rem;margin-bottom:0.20rem;}
+.newsneirong{width:6rem;margin:0 auto;}
+.pinglun{overflow: hidden;}
+.plt{width:6.4rem;border-bottom: 0.01rem solid #dedede;margin-top:0.4rem;padding-bottom: 0.12rem;}
+.pltit{border-left: 0.06rem solid #ff6600;padding-left: 0.18rem;}
+.pldj{display: inline-block;float: right;margin-right: 0.2rem;color:#b8b8b8;}
+.plli2{width:6.07rem;margin:0 auto;border-bottom: 1px solid #dedede;margin-top: 0.43rem;overflow: hidden;}
+.pl1{display:block;width:0.49rem;height: 0.49rem;background:url(../img/icon/btn_pinglun_touxiang@2x.png)0 0 no-repeat;background-size: 100%;}
+.pl1tt{margin:0.16rem;color:#0056ad;}
+.pl1t{color:#9a9a9a;float: right;font-weight: bolder;margin:0.16rem;}
+.plli2p{width:6rem;margin: 0.13rem 0rem 0.30rem 0.08rem;}
+.pldz{display: block;margin-top: -0.2rem;width:0.8rem;height: 0.44rem;background: url(../img/icon/icon_zan_button@2x.png) 0 0 no-repeat;background-size: 100%}
+.plfx{display: block;margin: -0.2rem 0.06rem 0.06rem 0rem;width:0.8rem;height: 0.44rem;background: url(../img/icon/icon_pinglun_button@2x.png) 0 0 no-repeat;background-size: 100%}
+.postcom{width:6.05rem;margin:0 auto;padding:0.22rem 0rem 0.16rem 0rem;overflow: hidden;}
+.postcomipt{width:3.93rem;height: 0.45rem;border: 1px solid #d3d3d3;font-size: 0.15rem;color:#d3d3d3;border-radius:0.2rem;outline: none;}
+.postbtn{width:0.46rem;height: 0.46rem;float: right;}
+.postbtn1{background: url(../img/icon/icon_detail_share@2x.png)0 0 no-repeat;background-size: 100%;}
+.postbtn2{background: url(../img/icon/icon_detail_xiazai@2x.png)0 0 no-repeat;background-size: 100%;margin:0rem 0.19rem;}
+.postbtn3{background: url(../img/icon/icon_detail_jiaru@2x.png)0 0 no-repeat;background-size: 100%;}
+/*=======================评论详情=========================*/
+.xqhf{height: 100%;min-height:13.00rem;}
+.plxq-img{margin:0 auto;}
+.plxq-dz{width:5.75rem;float: left;margin-bottom:0.1rem;margin-top: 0.32rem;}
+.dz-tubiao{width:0.40rem;height: 0.22rem;background: url(../img/icon/icon_zan_button.png) 5px 0px no-repeat;float: left;background-size: 100%;}
+.dz-ren{float:left;width:5.3rem;color:#256aab;}
+.dz-ren span{color:#000;}
+.plxq{float: left;overflow: hidden;}
+.plxq-tl1{float: left;width:5rem;margin: 0.1rem 0rem 0.05rem 0rem ;}
+.plxq-tl1 span{color:#256aab;}
+.plxq-btn{float: left;width:5.35rem;height: 0.45rem;line-height: 0.45rem;background-color: #f6f7f9;border-radius: 0.05rem;color:#7d7d7d;margin-left: 0.1rem;margin-top: 0.11rem;}
+.hf-tb{width:0.60rem;height: 0.44rem;background: url(../img/icon/zan.png);background-position: 0 0 ;background-repeat: no-repeat;float: left;background-size: 70%;margin-top: 0.11rem;margin-left:0.20rem;}
+/*==============个人中心=====================*/
+.w-personal{width:6.4rem;margin:0 auto;overflow: hidden;}
+.perli1{width:6.4rem;overflow: hidden;}
+.perfont1{float: left;margin-top: 0.63rem;}
+.perimg{width:1rem;height: 0.99rem;}
+.perbd{border-bottom: 11px solid #f0eff5;}
+.pertx{display: inline-block;width:1.01rem;height: 1.01rem;background:url(../img/icon/per_03.png) 0 0 no-repeat;background-size: 100%;margin:0.21rem 0.17rem 0.17rem 0.20rem;float: left;}
+.perzk{display: inline-block;width:0.15rem;height: 0.27rem;background:url(../img/icon/arrow_go01@2x.png) 0 0 no-repeat;background-size: 100%;margin:0.64rem 0.14rem 0.49rem 0rem;}
+.perli{width:6.4rem;overflow: hidden;}
+.pergg{margin:0.28rem 0.14rem 0.24rem 0.37rem;}
+.perhy{width:0.44rem;height:0.33rem; background: url(../img/icon/_03.png) 0 0 no-repeat;background-size: 100%;}
+.perfont{display:inline-block;margin-top:0.37rem;}
+.perzk2{display: block;width:0.15rem;height: 0.27rem;background:url(../img/icon/arrow_go01@2x.png) 0 0 no-repeat;background-size: 100%;margin:0.32rem 0.14rem 0.27rem 0rem;}
+.persc{width:0.44rem;height: 0.44rem;background: url(../img/icon/btn_leftmenu_clickshoucang@2x.png) 0 0 no-repeat;background-size: 100%;}
+.perjl{width:0.44rem;height: 0.44rem;background: url(../img/icon/j_03.png) 0 0 no-repeat;background-size: 100%;}
+.perjlv{width:6.4rem;float: left;padding-left: 0.13rem;overflow: hidden;}
+.perjlv1{width:1rem;margin-left:0.25rem;}
+.perimgf{float: left;margin-bottom:0.20rem;}
+.peryy{width:0.44rem;height: 0.44rem;background: url(../img/icon/w_06.png) 0 0 no-repeat;background-size: 100%;}
+.perfk{width:0.44rem;height: 0.44rem;background: url(../img/icon/btn_leftmenu_clickfankui@2x.png) 0 0 no-repeat;background-size: 100%;}
+.persz{width:0.44rem;height: 0.44rem;background: url(../img/icon/d_07.png) 0 0 no-repeat;background-size: 100%;}
+.bd1{border: 0.02rem solid #f0eff4;}
+.bd2{border: 0.27rem solid #f0eff4;}
+.bd3{border: 0.02rem solid #f0eff4;}
+.bd4{border: 0.03rem solid #f0eff4;}

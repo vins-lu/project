@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>娱乐库</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		娱乐库
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-ab">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="H-ylz">
+		<div class="H-yl font20">
+			<ul  class="H-tapy">
+				<li class="H-tapl H-tapp">最新</li>
+				<li class="H-tapl">最热</li>
+			</ul>
+			<ul class="H-tapy">
+				<li class="H-tapl H-tapp">全部</li>
+				<li class="H-tapl">北京</li>
+				<li class="H-tapl">湖南</li>
+				<li class="H-tapl">浙江</li>
+				<li class="H-tapl">安徽</li>
+			</ul>
+			<ul class="H-tapy">
+				<li class="H-tapl H-tapp">全部</li>
+				<li class="H-tapl">真人秀</li>
+				<li class="H-tapl">情感</li>
+				<li class="H-tapl">访谈</li>
+				<li class="H-tapl">脱口秀</li>
+			</ul>
+		</div>
+		<div class="H-ylx">
+			<ul class="H-ylw">
+				<!-- <li class="H-ylxq">
+					<img src="img/yule/kldby/2015-11-15.jpg" alt="" class="fl yutw">
+					<div class="fl font14 H-yljs">
+						<h3 class="font20 H-h3">大牌驾到</h3>
+						<p class="H-p">奥斯卡回复开大会非常快大黄蜂哈佛IE以后v偶次</p>
+						<p class="H-p">演员、杀v、酷虎、个会</p>
+						<div class="H-ylbf">
+							<span class="H-ybkl">268.3万</span>	
+						</div>
+					
+					</div>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/header.js"></script>
+	<script>
+		$(function(){
+			$.getJSON("js/sql.json",function(json){
+				for (var i = 0; i < json.lanmu.length; i++) {
+						if (json.lanmu[i].type=="娱乐") {
+							for (var a = 0; a < json.lanmu[i].fenlei.length; a++) {
+								var li=$("<li></li>").attr("class","H-ylxq")
+								var img=$('<img />').attr("class","fl yutw").attr("src",json.lanmu[i].fenlei[a].juji[0].src);
+								var div=$("<div></div>").attr("class","fl font14 H-yljs")
+								var h3=$("<h3></h3>").attr("class","font20 H-h3").text(json.lanmu[i].fenlei[a].name)
+								var p1=$("<p></p>").attr("class","H-p").text(json.lanmu[i].fenlei[a].state)
+								var p2=$("<p></p>").attr("class","H-p").text(json.lanmu[i].fenlei[a].gengxin)
+								var div1=$("<div></div>").attr("class","H-ylbf")
+								var span=$("<span></span>").attr("class","H-ybkl").text(json.lanmu[i].fenlei[a].gengxin)
+								li.append(img).append(div.append(h3).append(p1).append(p2).append(div1.append(span))).appendTo($('.H-ylw'))
+								
+							};
+							var lanmu2=json.lanmu[i];
+							$(".H-tapl").click(function(){
+								var newlm=[]
+								var j=$(".H-tapl").index(this);
+								$(".H-ylw").html("")
+								$(".H-tapl").eq(j).addClass("H-tapp").siblings().removeClass("H-tapp");
+								var jiemu=[];
+								for (var c = 0; c < $(".H-tapy").length; c++) {
+									if($(".H-tapp").eq(c).html()!="全部"){
+										jiemu.push($(".H-tapp").eq(c).html());
+									}
+								}
+								console.log(jiemu)
+								var lmtype=[];
+								for (var c = 0; c < lanmu2.fenlei.length; c++) {
+									lmtype.push(lanmu2.fenlei[c].type);
+								};
+								// console.log(lmtype)
+								for (var z = 0; z < lmtype.length; z++) {
+									for (var k = 0; k < jiemu.length; k++) {
+										if (lmtype[z].indexOf(jiemu[k==-1])) {
+											newlm.push(z);
+											break;
+										};
+									};
+								};
+								console.log(newlm)
+								var ads=0;
+								for(var p=0;p<lanmu2.fenlei.length;p++){
+										if(p==newlm[ads]){
+											ads++;
+											continue;
+										}else{
+											var li=$("<li></li>").attr("class","H-ylxq")
+											var img=$('<img />').attr("class","fl yutw").attr("src",lanmu2.fenlei[p].juji[0].src);
+											var div=$("<div></div>").attr("class","fl font14 H-yljs")
+											var h3=$("<h3></h3>").attr("class","font20 H-h3").text(lanmu2.fenlei[p].name)
+											var p1=$("<p></p>").attr("class","H-p").text(lanmu2.fenlei[p].state)
+											var p2=$("<p></p>").attr("class","H-p").text(lanmu2.fenlei[p].gengxin)
+											var div1=$("<div></div>").attr("class","H-ylbf")
+											var span=$("<span></span>").attr("class","H-ybkl").text(lanmu2.fenlei[p].gengxin)
+											li.append(img).append(div.append(h3).append(p1).append(p2).append(div1.append(span))).appendTo($('.H-ylw'))
+										}	
+								}
+							})
+						}
+					}
+			})
+		})
+		$(".H-ylw").on("click","li",function(){
+			window.location.href='yule.html?name1='+escape($(this).find(".H-yljs").find(".H-h3").html());
+		})
+	</script>
+</body>
+</html>

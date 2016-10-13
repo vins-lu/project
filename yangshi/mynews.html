@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>新闻</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		新闻
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-ab">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="w-news">
+		<span class="newstj fl font24">热播推荐</span>
+		<a href="JavaScript:;" class="newsgd fr font18">更多>></a>
+		<ul class="news"></ul>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/header.js"></script>
+	<script>
+		$(function(){
+			var i=0;
+			var jsn=null;
+			$.getJSON("js/sql.json",function(json){jsn=json.xinwen.length;});
+			function insert(i){
+				$.getJSON("js/sql.json",function(json){
+					var xw=json.xinwen;
+					var li=$("<li></li>").attr("class","newslist fl");
+					var img=$("<img/>").attr("class","newstu fl weishi").attr("src",xw[i].src);
+					li.append(img);
+					var div=$("<div></div>").attr("class","fl");
+					var a=$("<a></a>").attr("class","newstit font18").html(xw[i].name);
+					var p=$("<p></p>").attr("class","newscon font16 b3 fl").html(xw[i].neirong);
+					div.append(a).append(p).appendTo(li);
+					$(".news").append(li);
+				});	
+			}
+			for(i;i<6;i++){insert(i);}
+			var j=0; 
+			$(".w-news").on("click",".newsgd",function(){
+				$(".news").html("");
+				if(j<Math.ceil(jsn/6)){
+					for(i=6*j;i<6*j+6;i++){insert(i);}
+					j++;
+				}else{
+					j=0;
+					console.log(j);
+					for(i=6*j;i<6*j+6;i++){insert(i);}
+					j++;
+				}
+			});
+			$(".news").on("click",".newslist",function(){window.location.href="xinwen.html?name="+escape($(this).find(".newstit").html());});
+		});
+	</script>
+</body>
+</html>

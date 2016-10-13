@@ -1,0 +1,64 @@
+.hdy{width: 6.4rem;overflow: hidden;}
+
+.H-wk{width: 6.4rem;/*margin-left: 0.12rem;*/padding-top: 0.21rem;color: #666666;padding-bottom: 0.36rem;border-bottom: 0.01rem #dedede solid;}
+.H-tabc{overflow: hidden;}
+.H-tab{width: 1.17rem;height: 0.41rem;border: 0.01rem solid #dedede;background: #fff;line-height: 0.41rem;text-align: center;float: left;border-radius: 0.18rem;margin-left: 0.07rem;margin-bottom: 0.11rem;}
+.H-tabb{background: #f5f5f5;color: #3d78fe}
+
+.dys{
+	padding-left: 0.12rem;
+	padding-right: 0.12rem;
+	margin-right: -1rem;
+	overflow: hidden;
+}
+.dy{margin: 0 auto;}
+.dylist{
+	margin-top: 0.13rem;
+	margin-right: 0.1rem;
+}
+.H-mp{display:block;margin-bottom: 0.1rem;line-height: 0.46rem;margin-left: 0.04rem}
+/*娱乐库*/
+.H-ylz{width: 6.4rem;overflow: hidden;}
+.H-yl{width: 6.4rem;padding-top: 0.21rem;color: #666666;padding-bottom: 0.10rem;border-bottom: 0.01rem #dedede solid;}
+.H-tapy{overflow: hidden;}
+.H-tapl{width: 1.17rem;height: 0.41rem;border: 0.01rem solid #dedede;line-height: 0.41rem;text-align: center;float: left;border-radius: 0.18rem;margin-left: 0.07rem;margin-bottom: 0.11rem;}
+.H-ylw{margin-top: 0.12rem;width: 6.4rem}
+.H-ylx{width: 6.4rem}
+.H-ylxq{overflow: hidden;color:#bbbbbb ;padding-bottom: 0.15rem;border-bottom: 0.01rem #dedede solid;padding-top: 0.08rem;margin: 0 auto;width: 6.17rem}
+.yutw{width: 2.1rem;height: 1.41rem;margin-right: 0.17rem}
+.H-ylbf{overflow: hidden;margin-top: 0.28rem}
+.H-ybkl{position: relative;float: right;width: 0.7rem;height: 0.15rem;margin-right: 0.23rem;padding-right: 0.15rem}
+.H-ybkl:after{
+	position: absolute;
+	top: 0rem;
+	right: 0rem;
+	content: "";
+	display: inline-block;
+	width: 0.15rem;
+	height: 0.16rem;
+	background: url(img/icon/zyyl.png) right 0 no-repeat;background-size: 100%;
+}
+.H-h3{color: #333333;margin-top: 0.15rem;margin-bottom: 0.15rem}
+.H-p{margin-bottom: 0.08rem}
+.H-yljs{width: 3.9rem}
+.H-tapp{background: #f5f5f5;color: #3d78fe;}
+/*电影播放页*/
+.H-dxk{width: 6.4rem}
+.H-dxt{width: 6.4rem}
+.H-dxtz{width: 0.76rem;height: 0.76rem;background:url(img/icon/btn-s-video@3x.png) center center no-repeat;left: 50%;top: 40%;margin-top: -0.38rem;margin-left: -0.38rem;background-size: 100%}
+.H-jindutiao{width: 6.4rem;height: 0.34rem;background: url(img/icon/01_02.png);background-size: 100%}
+.H-dx{overflow: hidden;}
+.H-dxb{padding-top: 0.22rem;width: 6.12rem;margin: 0 auto}
+.H-dxbh3{margin-bottom: 0.07rem}
+.H-dxbp{line-height: 0.3rem;width: 5.98rem}
+/*卫视频道切换*/
+.H-weishi{width: 6.4rem;overflow: hidden;}
+.H-weishil{width: 1.27rem;height: 100%;background: #f3f3f3;color: #666666;border-right: 0.01rem #dedede solid;padding-top: 0.25rem}
+.H-weishir{width: 5.12rem;margin-top: -0.07rem}
+.H-wsll{width: 1.09rem;height: 0.28rem;line-height: 0.28rem;margin-left: 0.15rem;margin-bottom: 0.44rem;}
+.H-wtapl{border-right: 0.03rem #246cff solid;color: #246cff;}
+.H-wsrl{overflow: hidden;width: 5.12rem;border-bottom: 0.01rem #dedede solid;padding: 0.07rem 0;}
+.H-wst{width: 2.1rem;height: 1.4rem;margin-left: 0.11rem}
+.H-wswz{margin-top: 0.25rem;margin-left: 0.13rem}
+.H-wsh4{margin-bottom: 0.14rem}
+.H-gund{overflow-y: scroll;overflow-x:hidden;}

@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>电影库</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		电影库
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-fi">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="hdy">
+		<div class="H-wk font20">
+			<ul class="H-tabc">
+				<li class="H-tab H-tabb">最新</li>
+				<li class="H-tab">最热</li>
+				<li class="H-tab">专题</li>
+			</ul>
+			<ul class="H-tabc">
+				<li class="H-tab H-tabb">全部</li>
+				<li class="H-tab">内地</li>
+				<li class="H-tab">香港</li>
+				<li class="H-tab">台湾</li>
+				<li class="H-tab">日本</li>
+			</ul>
+			<ul class="H-tabc">
+				<li class="H-tab H-tabb">全部</li>
+				<li class="H-tab">院线</li>
+				<li class="H-tab">动作</li>
+				<li class="H-tab">冒险</li>
+				<li class="H-tab">喜剧</li>
+			</ul>
+			<ul class="H-tabc">
+				<li class="H-tab H-tabb">全部</li>
+				<li class="H-tab">2015</li>
+				<li class="H-tab">2014</li>
+				<li class="H-tab">2013</li>
+				<li class="H-tab">2012</li>
+			</ul>
+			<ul class="H-tabc">
+				<li class="H-tab H-tabb">全部</li>
+				<li class="H-tab">正片</li>
+				<li class="H-tab">预告片</li>
+				<li class="H-tab">微电影</li>
+			</ul>
+		</div>
+		<div class="dy">
+			<ul class="dys">
+				<!-- <li class="dylist fl">
+					<img class="three-s" src="img/dianying/yingyuan1.jpg" alt="">
+					<p class="font18">asdsa</p>
+				</li>
+				<li class="dylist fl">
+					<img class="three-s" src="img/dianying/yingyuan1.jpg" alt="">
+					<p class="font18">asdsa</p>
+				</li>
+				<li class="dylist fl">
+					<img class="three-s" src="img/dianying/yingyuan1.jpg" alt="">
+					<p class="font18">asdsa</p>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/header.js"></script>
+	<script>
+	$(function(){
+			$.getJSON("js/sql.json",function(json){
+				var dy=json.dianying;
+				var dytype=[];
+				var newdy=[];
+				for (var i = 0; i < json.dianying.length; i++) {
+					dytype.push(json.dianying[i].type+","+json.dianying[i].time);
+				};
+				//console.log(dytype)
+				for(var i=0;i<dy.length;i++){
+					var li=$("<li></li>").attr("class","dylist fl");
+					var img=$('<img />').attr("class","three-s").attr("src",dy[i].src);
+					var p=$("<p></p>").addClass("font18 H-mp").text(dy[i].name);
+					li.append(img).append(p).appendTo($(".dys"));
+				}
+
+				$(".H-tab").click(function(){
+					var i=$(".H-tab").index(this);
+					var leixing=[];
+					newdy=[];
+					$(".H-tab").eq(i).addClass("H-tabb").siblings().removeClass("H-tabb");
+					for (var i = 0; i < $(".H-tabc").length; i++) {
+						if($(".H-tabb").eq(i).html()!="全部"){
+							leixing.push($(".H-tabb").eq(i).html());
+						}
+					}
+					for(var j=0;j<dytype.length;j++){
+						for(var i=0;i<leixing.length;i++){
+							if(dytype[j].indexOf(leixing[i])==-1){
+								//alert(dytype[j].indexOf(leixing[i]))
+								//console.log(dytype[j])
+								//console.log(leixing[i])
+								// console.log(dytype[j]);
+								newdy.push(j);
+								break;
+							}	
+						}	
+					}
+					$(".dys").html("");
+					console.log(newdy);
+					var ads=0;
+					for(var i=0;i<dy.length;i++){
+							if(i==newdy[ads]){
+								ads++;
+								continue;
+							}else{
+								var li=$("<li></li>").attr("class","dylist fl");
+								var img=$('<img />').attr("class","three-s").attr("src",dy[i].src);
+								var p=$("<p></p>").addClass("font18 H-mp").text(dy[i].name);
+								li.append(img).append(p).appendTo($(".dys"));
+							}	
+					}
+					
+				})
+			})
+			
+		});
+	// $(".dy").click(function(){
+	// 	window.open('dianyingxiangqing.html&name='+$(this).find(".font18").html())
+	// 	alert(1)
+	// })
+	$(".dy").on("click","li",function(){
+		window.location.href='dianying.html?name='+escape($(this).find(".font18").html());
+	})
+
+	function reset(){
+ 		var html=document.getElementsByTagName('html')[0];
+ 		var w=document.documentElement.clientWidth;
+ 		html.style.fontSize=w/640*100+'px';
+ 	}
+ 	reset();
+ 	window.onresize=function(){
+ 		reset();
+ 	}
+	</script>
+</body>
+</html>

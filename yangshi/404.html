@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/error.css" media="screen" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/ort.js"></script>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		404
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-ab">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="wrapper"><!-- 容器 -->
+        <div class="littleH"><!-- 小黄人 -->
+            <div class="bodyH"><!-- 身体 -->
+                <div class="trousers"><!-- 裤子 -->
+                    <div class="condoleBelt"><!-- 吊带 -->
+                        <div class="left"></div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="trousers_top"></div><!-- 裤子突出的矩形部分 -->
+                    <div class="pocket"></div><!-- 裤袋 -->
+                    <!-- 三条线 -->
+                    <span class="line_left"></span>
+                    <span class="line_right"></span>
+                    <span class="line_bottom"></span>
+                </div>
+            </div>
+            <div class="hair"><!-- 头发 -->
+                <span class="left_hair_one"></span>
+                <span class="left_hair_two"></span>
+            </div>
+            <div class="eyes"> <!-- 眼睛 -->
+                <div class="leftEye"><!-- 左眼 -->
+                    <div class="left_blackEye">
+                        <div class="left_white"></div>
+                    </div>
+                </div>
+                <div class="rightEye"><!-- 右眼 -->
+                    <div class="right_blackEye">
+                        <div class="right_white"></div>
+                    </div>
+                </div>
+           	</div>
+            <div class="mouse"><!-- 嘴巴 -->
+                <div class="mouse_shape"></div>
+            </div>
+            <div class="hands"><!-- 双手 -->
+                <div class="leftHand"></div>
+                <div class="rightHand"></div>
+            </div>
+            <div class="feet"><!-- 双脚 -->
+                <div class="left_foot"></div>
+                <div class="right_foot"></div>
+            </div>
+            <div class="groundShadow"></div><!-- 脚底阴影 -->
+        </div>
+    </div>
+	<p class="errortext">
+		<span data-text="4">4</span>
+		<span data-text="0">0</span>
+		<span data-text="4">4</span>
+		<span data-text="错">错</span>
+		<span data-text="误">误</span>
+	</p>
+
+	<script type="text/javascript" src="js/header.js"></script>
+    <script>
+    	$(function(){
+    		function errorTextShow(i){
+    			$(".errortext span").eq(i).addClass("change");
+    		}
+    		function show(){
+	    		for(var i=0;i<$(".errortext span").length;i++){
+	    			(function(i){
+	    				setTimeout(function(){
+	    					errorTextShow(i);
+	    				},300*i)
+	    			})(i);
+	    		}
+	    		setTimeout(function(){
+	    			$(".change").removeClass("change");
+	    		},2000);
+    		}
+    		show();
+    		setInterval(show,3000);
+    	})
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频播放</title>
+	<link rel="stylesheet" href="css/public1.css">
+	<link rel="stylesheet" href="css/clear.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+</head>
+<body>
+	<div class="cyfvideo">
+		<div class="cyfvideotop" id="top">
+			<div class="cyfvideotopleft" onclick="window.history.back();">
+				<div class="cyfvideotopback"></div>	
+				<h2 class="cyfvideoh2">奔跑吧兄弟 第八期</h2>
+			</div>
+			<div class="cyfvideotopright">
+				<div class="cyfshare"></div>
+				<div class="cyfvideoh2">刷新</div>
+				<div class="cyfvideoh2">收藏</div>
+				<div class="cyfvideoh2" id="cyfshowlist">节目单</div>
+				<div class="cyfvideoh2">换台</div>
+			</div>
+		</div>
+		<div class="cyfshareblock">
+			<ul class="cyfshareblockin">
+				<li class="cyfshareblockinli" style="margin-left: 0;">
+					<img src="img/icon/share_weixin@2x.png" alt="" class="cyfshareblockinliimg">
+					<p class="cyfweixin font20">微信</p>
+				</li>
+				<li class="cyfshareblockinli">
+					<img src="img/icon/share_pengyouquan@2x.png" alt="" class="cyfshareblockinliimg">
+					<p class="cyfweixin font20">朋友圈</p>
+				</li>
+				<li class="cyfshareblockinli">
+					<img src="img/icon/share_qq@2x.png" alt="" class="cyfshareblockinliimg">
+					<p class="cyfweixin font20">qq</p>
+				</li>
+				<li class="cyfshareblockinli" style="margin-left: 0;">
+					<img src="img/icon/share_qzone@2x.png" alt="" class="cyfshareblockinliimg">
+					<p class="cyfweixin font20">QQ空间</p>
+				</li>
+				<li class="cyfshareblockinli">
+					<img src="img/icon/share_weibo@2x.png" alt="" class="cyfshareblockinliimg">
+					<p class="cyfweixin font20">腾讯微博</p>
+				</li>
+				<li class="cyfshareblockinli">
+					<img src="img/icon/share_sina@2x.png" alt="" class="cyfshareblockinliimg">
+					<p class="cyfweixin font20">新浪微博</p>
+				</li>
+			</ul>	
+		</div>	
+		<div class="cyfshowlistblock">
+		</div>
+		<div class="cyfspace"></div>
+		<div class="videopad" id="bottom"></div>
+	</div>
+	<script>
+		var src=unescape(window.location.href).split("src=")[1];
+		$(".cyfvideo").eq(0).css("backgroundImage","url("+src+")");
+		  var a=0,b=0;
+			$(".cyfspace").eq(0).click(function(){
+				if (a==0) {
+					$("#top").fadeIn(500);
+					a=1;
+				}else{
+					$("#top").fadeOut(500);
+					a=0;
+				}
+				if (b==0) {
+					$("#bottom").fadeIn(500);
+					b=1;
+				}else{
+					$("#bottom").fadeOut(500);
+					b=0;
+				}
+				
+				$(".cyfshareblock").fadeOut(500);
+				$(".cyfshowlistblock").fadeOut(500);
+
+				$(".cyfshare").eq(0).click(function(){
+					$("#top").fadeOut(500);
+					a=0,b=0;
+					$(".cyfshareblock").fadeIn(500);
+				})
+
+				$("#cyfshowlist").eq(0).click(function(){
+					$("#top").fadeOut(500);
+					a=0,b=0;
+					$(".cyfshowlistblock").fadeIn(500);
+				})
+				})
+
+			$(function(){
+				$.getJSON("js/sql.json",function(json){
+				var jiemu=json.lanmu[0].fenlei[0].jiemulist;
+				var ul=$("<ul></ul>").attr("class","cyfshowlistblockinner font20");
+				for (var i = 0; i < jiemu.length; i++) {
+					var li=$("<li></li>").attr("class","cyfshowlistblockinnert").text(jiemu[i]);
+					ul.append(li);
+				}
+				
+				$(".cyfshowlistblock").append(ul);
+				})
+			})
+	</script>
+</body>
+</html>

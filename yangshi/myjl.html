@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的观看记录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		我的记录
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-ab">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="cyf-body"></div>
+
+	<script src="js/header.js"></script>
+	<script>
+		$('body').click(function(e){
+      		e.preventDefault();
+		})
+		$('cyfjl').click(function(e){
+      		e.preventDefault();
+		})
+		$(function(){
+			$.getJSON("js/sql.json",function(json){
+				var lanmu=json.lanmu[0].fenlei;
+				for (var i = 0; i < lanmu.length; i++) {
+					var div1=$("<div></div>").attr("class","cyfjlleft fl pos-re");
+					var div2=$("<div></div>").attr("class","cyfjlcheckbox fr");
+					var div3=$("<div></div>").attr("class","cyfcheck pos-ab");
+					var div4=$("<div></div>").attr("class","cyfjl");
+					var img1=$("<img />").attr("class","weishi fl").attr("src",lanmu[i].src);
+					var div5=$("<div></div>").attr("class","cyfjltext fl");
+					var h4=$("<h4></h4>").attr("class","font20").text(lanmu[i].name);
+					var p=$("<p></p>").attr("class","font14 c9").text("观看少于1分钟");
+					div1.append(div2).append(div3);
+					div5.append(h4).append(p);
+					div4.append(div1).append(img1).append(div5);
+					$(".cyf-body").append(div4);
+					$(".cyf-body").on("click",".cyfjlcheckbox",function(){$(this).next().toggle();});
+				}
+				$(".cyf-body").append($("<button></button>").attr("class","fl font20 selbtn").text("全选"));
+				$(".cyf-body").append($("<button></button>").attr("class","fl font20 selbtn").text("删除"));
+				$(".selbtn").eq(0).toggle(function(){
+					$(".cyfcheck").css("display","block");
+					$(this).css("background","orange");
+					$(this).text("取消");
+				},function(){
+					$(".cyfcheck").css("display","none");
+					$(this).css("background","#ccc");
+					$(this).text("全选");
+				});
+				$(".selbtn").eq(1).click(function(){
+					$(".cyfcheck[style*='display: block']").parentsUntil(".cyf-body").remove();
+				})
+				$(".cyf-body").on("click",".cyfcheck",function(){$(this).toggle();});
+			});
+			
+		});
+	</script>
+</body>
+</html>

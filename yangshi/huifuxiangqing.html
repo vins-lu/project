@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>回复详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		回复详情
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-fi">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="w-news xqhf">
+		<div class="plli2">
+			<span class="pl1 fl"></span>
+			<span class="pl1tt font16 fl ">我就是阿翔</span>
+			<!-- <span class="pl1t font12"></span> -->
+			<p class="plli2p font16 fl">沙龙的会计法事件的数据的分类数据放到了空间撒地方了空间撒到了非空间撒到了开发家里加福禄寿减肥了三大加福禄寿减肥的路上看解放东路萨克减肥了萨科技的法律思考减肥了萨科技发来撒减肥了深刻解放东路萨克京东发来撒开吉林省就</p>
+			<img src="img/ls1.jpg" alt="" class="plxq-img oneimg">
+			<div class="plxq-dz">
+				<span class="dz-tubiao"></span>
+				<p class="dz-ren font16">
+					浅唱、聆听——。、微蓝、桃子、梅梅、幸福式微笑、看AV+微shinm8888、大傻、浅唱、聆听——。、微蓝、桃子、梅梅、幸福式微笑、看AV+微shinm8888、大傻、浅唱、聆听——。、微蓝、桃子、梅梅、幸福式微笑、看AV+微shinm8888、大傻、<span>等<var class="dianzanshu">27</var>个赞</span>
+				</p>
+			</div>
+			<div class="plxq-tl">
+				<p class="plxq-tl1 font20"><span>峰：</span>看见换头像就烦</p>
+				<p class="plxq-tl1 font20"><span>&nbsp;：</span>说得好</p>
+				<p class="plxq-tl1 font20"><span>&nbsp;&nbsp;&nbsp;囍：</span>不好</p>
+				<p class="plxq-tl1 font20"><span>-：</span>有病你</p>
+			</div>
+		</div>
+		<div class="fl">
+			<button class="plxq-btn font22">回复</button>
+			<span class=" hf-tb"></span>
+		</div>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/header.js"></script>
+	<script>
+		if(window.location.href.split("html")[1].indexOf("name")==-1){
+			window.location.href="login.html";
+		}
+		//解析跳转
+		$(function(){
+			
+				var pl=unescape(window.location.href).split("=")[2];
+				// if(pl==null){
+				// 	window.location.href="";
+				// }
+				var span1=$("<span>").attr("class","pl1t font12").html(pl);
+				span1.insertBefore(".plli2p");
+		})
+		//点赞加一
+		// $.getJSON("js/sql.json",function(){
+
+		// })
+		$(".hf-tb").one("click",function(){
+			var num=parseInt($(".dianzanshu").html())+1;
+			$(".dianzanshu").html(num);
+			$(".hf-tb").css("backgroundImage","url(img/icon/zan1.png)");
+		});
+	</script>
+	
+</body>
+</html>

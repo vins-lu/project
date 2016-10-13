@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>电影详情</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		电影详情
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-fi">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="H-dxk pos-re">
+		<div class="H-dx">
+			<img src="img/yule/bpbxd/2015-11-15.jpg" alt="" class="H-dxt oneimg fl">
+			<div class="H-dxtz pos-ab"></div>
+		</div>		
+		<div class="H-jindutiao"></div>
+		<div class="H-dxb">
+			<h3 class="font24 H-dxbh3">玲琅榜</h3>
+			<p class="font16 H-dxbp">8.5分  爱情  全45集   8.7亿次播放</p>
+			<p class="font16 H-dxbp">剧情描述剧情描述剧情描述剧情描述剧情描述剧情描述剧情描述剧情描述剧情描述剧情描述情描述情描述情描述情描述情描述</p>
+		</div>
+	</div>
+	<div class="at"><!-- 标题 -->
+		<h2 class="att fl pos-re font30 c6">推荐</h2>
+		<a href="###" class="ata fr font20"></a>
+	</div>
+	<div class="out"></div>
+	<ul class="pinglun">
+		<div class="at"><!-- 标题 -->
+			<h2 class="att fl pos-re font30 c6">网友评论</h2>
+			<a href="###" class="ata fr font20">3.0万>></a>
+		</div>
+		<li class="plli2">
+			<span class="pl1 fl"></span>
+			<span class="pl1tt font16 fl ">我就是阿翔</span>
+			<span class="pl1t font12">2015-09-14</span>
+			<p class="plli2p font16 fl">沙龙的会计法事件的数据的分类数据放到了空间撒地方了空间撒到了非空间撒到了开发家里加福禄寿减肥了三大加福禄寿减肥的路上看解放东路萨克减肥了萨科技的法律思考减肥了萨科技发来撒减肥了深刻解放东路萨克京东发来撒开吉林省就</p>
+			<a href="javascript:;" class="huifu fl" style="margin-left:0.13rem;">查看全部20条回复</a>
+			<a href="javascript:;" class="pldz fr"></a>
+			<a href="javascript:;" class="plfx fr"></a>
+		</li>
+		<li class="postcom">
+			<input type="text" name="" value="写评论" class="postcomipt">
+			<button class="postbtn3 postbtn"></button>
+			<button class="postbtn2 postbtn"></button>
+			<button class="postbtn1 postbtn"></button>
+		</li>
+	</ul>
+
+	<script type="text/javascript" src="js/header.js"></script>
+	<script>
+		if(window.location.href.split("html")[1].indexOf("name")==-1){
+			window.location.href="login.html";
+		}
+		$(function(){
+			if(window.location.href.indexOf(name)){
+				var name=unescape(window.location.href).split("=")[1];
+				$.getJSON("js/sql.json",function(json){
+					var dy=json.dianying;//电影
+					for (var i = 0; i < dy.length; i++) {
+						if (dy[i].name==name) {
+							$(".H-dx").find(".H-dxt").attr("src",dy[i].src);
+							$(".H-dxbh3").html(name);
+							$(".H-dxbp").eq(0).html(dy[i].pingfen+'。'+dy[i].shangying+'。'+dy[i].time+'。'+dy[i].bofangliang+"播放次数");
+							$(".out").eq(0).CreateLS(dy,true).listShow();
+						};
+					};
+				})	
+			}
+
+			pingLun();//回复评论
+			//跳转
+			$(".pinglun").on("click",".huifu",function(){
+				window.open("huifuxiangqing.html?name="+escape($(this).find(".huifu").html())+"&pl="+escape($(".pinglun").find(".pl1t").html()),"_self");
+			});
+			$(".out").eq(0).on("click",".ls_item",function(){
+				var index=$(this).index();
+				$.getJSON("js/sql.json",function(json){
+					var tname=json.dianying[index].name;
+					window.open("dianying.html?name="+escape(tname),"_self");
+				})
+			});
+		})
+	</script>
+</body>
+</html>

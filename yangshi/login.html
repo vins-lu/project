@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>登录</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/c.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		登录
+		<em class="hback fl"></em>
+		<em class="hregit fr">注册</em>
+		<div class="hnborder"></div>
+	</div>
+	<div class="c-topall font20">
+		<div class="c-zh pos-re">
+			<span class="c-zhcolor pos-ab font24">账号:</span>
+			<input type="text" name="" placeholder="手机号或邮箱" class="c-zhk" id="c-z">
+		</div>
+		<div class="c-mm pos-re">
+			<span class="c-zhcolor pos-ab font24">密码:</span>
+			<input type="text" name="" placeholder="请输入密码" class="c-zhk">
+			<a href="" class="font20 forgetmm" style="color:#4c60b6;">忘记密码?</a>
+			<input type="button" name="" value="登录" class="login">
+		</div>
+	</div>
+	<div class="c-end pos-ab">
+		<div class="c-allbottom">
+			<div class="c-ball pos-re">
+				<div class="c-bsl fl"></div>
+				<div class="c-bm fl"></div>
+				<div class="c-bsr fl"></div>
+				<div class="pos-ab c-sl"></div>
+				<!-- <img src="img/icon/icon_jiantou_up@2x.png" alt="" class="pos-ab c-sl"> -->
+			</div>
+			<div class="c-bottom">
+				<h3 class="font20 c-wz">其他登录方式</h3>
+			</div>
+		</div>
+		<div class="c-go pos-ab">
+			<input type="text" name="" value="微信登录" class="c-wxlogin font24">
+			<input type="text" name="" value="Q Q登录" class="c-qqlogin font24">
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/header.js"></script>
+	<script>
+		var zhk=$('.c-zhk').eq(0);
+		var cz=document.getElementById('c-z');
+	// ----------------手机适配----------------
+		function reset(){
+	 		var html=document.getElementsByTagName('html')[0];
+	 		var w=document.documentElement.clientWidth;
+	 		html.style.fontSize=w/640*100+'px';
+	 	}
+	 	reset();
+	 	window.onresize=function(){
+	 		reset();
+	 	}
+	 // ----------------获取cookie---------------
+		 function setCookie(key,value,days){//设置cookie
+			var dates=new Date();
+			dates.setDate(dates.getDate()+days);
+			document.cookie=key+'='+escape(value)+'; expires='+dates;
+		}
+		function getCookie(key){//获取cookie
+			var arr=unescape(document.cookie).split('; ');
+			for (var i = 0; i < arr.length; i++) {
+			var arr2=arr[i].split('=');
+				if (arr2[0]==key) {
+					return arr2[1];//返回的结果
+				};
+			};
+			return false;
+		}
+		function rmCookie(key){//删除cookie
+			setCookie(key,'1',-1);
+		}
+		var zhval=cz.value;
+		setCookie("c-zhk",zhval,7)
+	// ---------------正则表达式---------------
+    	function iszh(obj){
+    		var reg1=/[a-zA-Z0-9]{1,10}@[a-zA-Z0-9]{1,5}\.[a-zA-Z0-9]{1,5}/gi;
+    		var reg2=/^1[0-9]{10}$/gi;
+    		if(!reg1.test(obj)){
+	    		if(!reg2.test(obj)){
+	        		alert("请正确填写账号！");
+	        		$(".c-zhk").eq(0).val("");
+	        		return false;
+	      		}else{
+	      			return true;
+	      		}
+      		}else{
+      			return true;
+      		}
+    	}
+		$(".login").click(function(){
+			if(iszh($(".c-zhk").eq(0).val())){
+				window.open("index.html","_self");
+			}
+		})
+	// ----------------登录上拉----------------
+		$(".c-end").toggle(function(){
+			$(".c-end").stop().animate({
+				bottom:"2.92rem"
+			},1000,"easeInOutBack");
+			$(".c-sl").css("backgroundImage","url(img/icon/icon_jiantou_down@2x.png)");
+		},function(){
+				$(".c-end").stop().animate({
+					bottom:"0rem"
+				},1000,"easeInOutBack");
+				$(".c-sl").css("background","url(img/icon/icon_jiantou_up@2x.png)");
+		});
+		$(".hregit").eq(0).click(function(){
+			window.open("regit.html","_self");
+		});
+		$("body").css("height",$(window).height());
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>频道管理</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<div class="header pos-re font30">
+		频道管理
+		<em class="hback fl"></em>
+		<em class="htext c36f fr font24">管理</em>
+		<div class="hnborder"></div>
+	</div>
+	<div class="pdcon">
+		<ul class="pds font24">
+			<li class="pdlist pdlist1 pos-re fl">直播频道</li>
+			<li class="pdlist pdlist2 pos-re fl">电视剧</li>
+			<li class="pdlist pdlist3 pos-re fl">电影</li>
+			<li class="pdlist pdlist4 pos-re fl">综艺</li>
+			<li class="pdlist pdlist5 pos-re fl">体育</li>
+			<li class="pdlist pdlist6 pos-re fl">新闻</li>
+			<li class="pdlist pdlist7 pos-re fl">少儿</li>
+			<li class="pdlist pdlist8 pos-re fl">动漫</li>
+			<li class="pdlist pdlist9 pos-re fl">纪录片</li>
+			<li class="pdlist pdlist10 pos-re fl">音乐</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="js/header.js"></script>
+	<script>
+		jQuery(function($){	
+			$(".htext").click(function(){
+				if($(this).text()=="管理"){
+					$(this).text("完成");
+					$(".pdlist").append($("<em></em>").attr("class","pos-ab pddel").html("×"));
+					$(".pds").append($("<li></li>").attr("class","pdlist pos-re fl pdadd").text("+"));
+				
+				}else{
+					$(this).text("管理");
+					$(".pdlist").find(".pddel").remove();
+					$(".pdadd").remove();
+				}
+			});
+			$(".pds").on("click",".pddel",function(){$(this).parent().remove()});
+			$(".pds").on("click",".pdadd",function(){
+				var str=prompt("请输入你要添加的频道","不得超过6个文字");
+				if(str&&str.trim().length!=0&&str.trim().length<7){
+					var newpd=$("<li></li>").attr("class","pdlist pdlist11 pos-re fl").text(str);
+					newpd.append($("<em></em>").attr("class","pos-ab pddel").html("×"));
+					newpd.insertBefore($(this));
+				}
+			});
+		})
+	</script>
+</body>
+</html>

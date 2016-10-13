@@ -1,0 +1,118 @@
+*{
+	font-family: "微软雅黑";
+}
+
+.cyfvideo{
+	width: 13.34rem;
+	height: 6.4rem;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	background: url(../img/yule/bpbxd/video.png)0 0 no-repeat;
+}
+.cyfvideotop{
+	width: 100%;
+	height: 0.84rem;
+	background: rgba(0,0,0,0.6);
+	position: absolute;
+	top: 0;
+	display: none;
+}
+.cyfvideotopleft{
+	height: 0.5rem;
+	line-height: 0.5rem;
+	position: absolute;
+	overflow: hidden;
+	top: 0.2rem;
+	left: 0.35rem;
+}
+.cyfvideotopback{
+	width: 0.27rem;
+	height: 0.5rem;
+	float: left;
+	background: url(../img/icon/leftwhite.png)0 0 no-repeat;
+}
+.cyfvideoh2{
+	font-size: 0.2755rem;
+	color: #fff;
+	float: left;
+	line-height: 0.5rem;
+	margin-left: 0.27rem;
+}
+.cyfvideotopright{
+	height: 0.5rem;
+	line-height: 0.5rem;
+	position: absolute;
+	overflow: hidden;
+	top: 0.2rem;
+	left: 9.07rem;
+}
+.cyfshare{
+	width: 0.38rem;
+	height: 0.38rem;
+	float: left;
+	margin-top: 0.03rem;
+	background: url(../img/icon/share_05.png)0 0 no-repeat;
+}
+.videopad{
+	width: 13.34rem;
+	height: 0.88rem;
+	background: url(../img/icon/videopad.png)0 0 no-repeat;
+	position: absolute;
+	bottom:0;
+	display: none;
+}
+.cyfspace{
+	height: 4.68rem;
+	width: 13.34rem;
+	margin-top: 0.84rem;
+}
+.cyfshareblock{
+	width: 4.48rem;
+	height: 5.52rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: rgba(0,0,0,0.6);
+	display: none;
+}
+.cyfshareblockin{
+	width: 3.6rem;
+	margin: 0 auto;
+	margin-top: 0.64rem;
+	position: relative;
+	overflow: hidden;
+}
+.cyfshareblockinliimg{
+	width: 0.89rem;
+	height: 0.89rem;
+	display: block;
+}
+.cyfshareblockinli{
+	width: 0.89rem;
+	margin-left: 0.45rem;
+	margin-top: 0.4rem;
+	float: left;
+}
+.cyfweixin{
+	margin-top: 0.05rem;
+	color: #fff;
+	text-align: center;
+}
+.cyfshowlistblock{
+	width: 4.48rem;
+	height: 5.52rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: rgba(0,0,0,0.6);
+	display: none;
+}
+.cyfshowlistblockinner{
+	width: 4.04rem;
+	margin-left: 0.44rem;
+}
+.cyfshowlistblockinnert{
+	color: #fff;
+	margin-top: 0.28rem;
+}

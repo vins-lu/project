@@ -1,0 +1,67 @@
+.header{width: 6.4rem;padding-top: 0.25rem;text-align: center;overflow: hidden;height: 0.57rem;line-height: 0.3rem;background: #fff;z-index: 20;}/*头部样式*/
+.hmenu{display: inline-block;width: 0.36rem;height: 0.3rem;background: url(../img/icon/home-icon-list@2x.png) center center no-repeat;background-size: 80%;margin-left:0.2rem;}/*菜单按钮*/
+.hback{display: inline-block;width: 0.36rem;height: 0.3rem;background: url(../img/icon/arrow-back@2x.png) center center no-repeat;background-size: 50%;margin-left:0.2rem;}/*后退按钮*/
+.hfind{display: inline-block;width: 0.36rem;height: 0.3rem;background: url(../img/icon/icon_search@3x.png) center center no-repeat;background-size: 80%;margin-right:0.2rem;}/*搜索按钮*/
+.hregit{display: inline-block;height: 0.3rem;line-height: 0.31rem;margin-right:0.3rem;}/*注册按钮*/
+.sfind{width: 6.4rem;top: 0rem;left: 0rem;display: none;background: #efeff4;z-index: 1000;}
+.sfcon{background: #fff;}
+.shfind{top:0.4rem;right:0rem;}
+.fipt{width: 0rem;height: 0.55rem;border-radius: 0.1rem;text-indent: 0.5rem;margin-right: 1.2rem;overflow: hidden;}/*搜索框*/
+.fcencel{display: inline-block;top:0.3rem;right: 0.2rem;height: 0.55rem;line-height: 0.55rem;display: none;}/*取消搜索按钮*/
+.htext{margin-right: 0.2rem;}/*头部文字样式*/
+.hnav{top: 0.8rem;width: 6.4rem;height:0.8rem;background: #fff;z-index: 20;}
+.hnborder{height: 0.03rem;margin-top: 0.25rem; background: -webkit-linear-gradient(left,#d874f2,#5274ff); /* Safari 5.1 - 6 */background: -o-linear-gradient(right,#d874f2,#5274ff); /* Opera 11.1 - 12*/background: -moz-linear-gradient(right,#d874f2,#5274ff); /* Firefox 3.6 - 15*/background: linear-gradient(to right,#d874f2,#5274ff); /* 标准的语法 */}
+.hbody{z-index: 10;top: 1.4rem;}
+.hout{width: 6.4rem;overflow: hidden;}
+.hncon{width: 10rem;line-height: 0.8rem;overflow: hidden;}
+.hnlist{padding:0 0.2rem;}
+.hadd{top: 0.3rem;right: 0.1rem;height: 0.24rem;line-height: 0.24rem;background: rgba(255,255,255,0.5);}
+.hnselect{color:#246cff;/*border-bottom: 0.02rem solid #246cff;*/}
+.hnlborder{border-bottom: 0.02rem solid #246cff;bottom: 0rem;width: 0.88rem;}
+/*频道管理*/
+.pdcon{width: 6.4rem;overflow: hidden;}
+.pds{overflow: hidden;margin-right: -0.05rem;}
+.pdlist{width: 2.13rem;height:1.55rem;border-right: 0.01rem solid #dedede;border-bottom: 0.01rem solid #dedede;line-height: 2.5rem;text-align: center;}/*频道列表*/
+.pdlist:before{position: absolute;display: inline-block;content: "";top: 0.3rem;left: 50%;width: 0.66rem;height: 0.66rem;margin-left: -0.33rem;}/*频道图片*/
+
+.pdlist1:before{background: url(../img/icon/btn_pindao_zhibo@3x.png) no-repeat;background-size: 100%;}
+.pdlist2:before{background: url(../img/icon/btn_pindao_dianshi@3x.png) no-repeat;background-size: 100%;}
+.pdlist3:before{background: url(../img/icon/btn_pindao_dianying@3x.png) no-repeat;background-size: 100%;}
+.pdlist4:before{background: url(../img/icon/btn_pindao_zongyi@3x.png) no-repeat;background-size: 100%;}
+.pdlist5:before{background: url(../img/icon/btn_pindao_tiyu@3x.png) no-repeat;background-size: 100%;}
+.pdlist6:before{background: url(../img/icon/btn_pindao_xinwen@3x.png) no-repeat;background-size: 100%;}
+.pdlist7:before{background: url(../img/icon/btn_pindao_shaoer@3x.png) no-repeat;background-size: 100%;}
+.pdlist8:before{background: url(../img/icon/btn_pindao_dongman@3x.png) no-repeat;background-size: 100%;}
+.pdlist9:before{background: url(../img/icon/btn_pindao_jilup@3x.png) no-repeat;background-size: 100%;}
+.pdlist10:before{background: url(../img/icon/btn_pindao_yinyue@3x.png) no-repeat;background-size: 100%;}
+.pdlist11:before{background: url(../img/icon/btn_pinglun_touxiang@3x.png) no-repeat;background-size: 100%;}
+.pddel{top:0.1rem;right:0.1rem;height: 0.2rem;line-height: 0.2rem;}/*频道删除按钮*/
+.pddel:hover{color: red;}
+.pdadd{font-size: 0.5rem;line-height: 1.55rem;}
+
+.click{position: absolute;width: 0.8rem;height: 0.8rem;border-radius: 100%;z-index: 10000;display: none;}/*点击水波效果样式*/
+.water{position: absolute;border:0.01rem solid #ccc;border-radius: 100%;top: 50%;left: 50%;display: none;}
+.hotf{padding: 0rem 0.15rem;display: none;}/*热门搜索*/
+.hott{padding: 0.3rem 0.1rem;}
+.hotlist{text-indent: 0.8rem;border-bottom: 1px solid #ccc;padding: 0.2rem 0;overflow: hidden;}
+.hotlist:before{position: absolute;content: attr(data-index);display: inline-block;top: 0.17rem;left: 0.3rem;width: 0.34rem;height: 0.34rem;line-height: 0.34rem;background-color: #dfdfdf;text-align: center;text-indent: 0;}
+.hotthree:before{background-color: #ff7000;color: #fff;}
+
+/*左侧划出*/
+.lslide{width: 4.1rem;overflow: hidden;background: #f1f1f1;top: 0rem;left:-4.1rem;z-index: 1;}
+.lperson{width: 4.1rem;height: 2.3rem;background: url(../img/icon/indexsolidbg.jpg) center center no-repeat;background-size: cover;}
+.ltx{display: inline-block;top: 50%;left: 0.2rem;width: 1.2rem;height: 1.2rem;margin-top: -0.6rem;}
+.lptext{display: inline-block;top: 50%;left: 1.7rem;height: 1.2rem;line-height:1.2rem;margin-top: -0.6rem;}
+.menulist{overflow:hidden;}
+.mlcon{padding-left:0.2rem;padding-right: 0.3rem;margin-top: -0.01rem;margin-bottom: 0.1rem;background: #ffffff;}
+.mllist{height: 1rem;border-top: 0.01rem solid #ccc;text-indent: 0.8rem;line-height: 1rem;}
+.mllist:before{position: absolute;content: "";display: inline-block;width:0.58rem;height:0.58rem;margin-top: -0.29rem;top: 50%;left: 0rem;background: red;}
+.mllist:after{position: absolute;content: "";display: inline-block;width:0.15rem;height:0.3rem;margin-top: -0.15rem;top: 50%;right: 0rem;background:url(../img/icon/btn_leftmenu_you_jiantou@3x.png)center center no-repeat;background-size: 100%;}
+.mllist1:before{background: url(../img/icon/shouye.png) center center no-repeat;background-size: 100%;}
+.mllist2:before{background: url(../img/icon/shoucang.png) center center no-repeat;background-size: 100%;}
+.mllist3:before{background: url(../img/icon/jilu.png) center center no-repeat;background-size: 100%;}
+.mllist4:before{background: url(../img/icon/yuyue.png) center center no-repeat;background-size: 100%;}
+.mllist5:before{background: url(../img/icon/fankui.png) center center no-repeat;background-size: 100%;}
+.mllist6:before{background: url(../img/icon/shezhi.png) center center no-repeat;background-size: 100%;}
+.mllist7:before{background: url(../img/icon/exit.png) center center no-repeat;background-size: 100%;}
+.mllist7{border: none;}

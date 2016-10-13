@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>主页</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/news.css">
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body class="hid">
+	<!-- 左侧划出 -->
+	<div class="lslide pos-fi font30">
+		<div class="lperson pos-re">
+			<img class="ltx pos-ab" src="img/icon/tx.png" alt="">
+			<span class="lptext pos-ab">请登录</span>
+		</div>
+		<div class="menulist">
+			<ul class="mlcon c6">
+				<li class="mllist mllist1 pos-re">首页</li>
+				<li class="mllist mllist2 pos-re">我的收藏</li>
+				<li class="mllist mllist3 pos-re">观看记录</li>
+				<li class="mllist mllist4 pos-re">我的预约</li>
+				<li class="mllist mllist5 pos-re">意见反馈</li>
+				<li class="mllist mllist6 pos-re">设置</li>
+			</ul>
+			<ul class="mlcon c6"><li class="mllist mllist7 pos-re">退出</li></ul>
+		</div>
+	</div>
+	<!-- 头部导航 -->
+	<div class="header pos-fi font30">
+		CCTV手机电视
+		<em class="hmenu fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-fi">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<!-- 页面导航 -->
+	<div class="hnav pos-fi">
+		<div class="hout pos-ab">
+			<ul class="hncon ">
+				<li class="hnlist fl font24 hnselect">首页</li>
+				<li class="hnlist fl font24">新闻</li>
+				<li class="hnlist fl font24">体育</li>
+				<li class="hnlist fl font24">热剧</li>
+				<li class="hnlist fl font24">电影</li>
+				<li class="hnlist fl font24">娱乐</li>
+				<li class="hnlist fl font24">直播</li>
+				<li class="hnlist fl font24">专题</li>
+				<li class="hnlist fl font24">G客</li>
+			</ul>
+		</div>
+		<div class="hadd pos-ab font24" onclick="window.open('pindaoguanli.html','_self')">+</div>
+		<div class="hnlborder pos-ab"></div>
+	</div>
+	<div class="hbody pos-re">
+		<div class="hbout">
+			<ul class="hbcon">
+				<li id="shouye" class="hblist fl"><!-- 首页 -->
+					<div class="scroll"></div>
+					<div class="cyf-body">
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">热播推荐</h2>
+							<a href="yuleku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">综艺趴</h2>
+							<a href="yuleku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">热剧连连看</h2>
+							<a href="yuleku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">体育竞技</h2>
+							<a href="javascript:void(0)" class="ata fr font20">更多>></a>
+						</div>
+					</div>
+				</li>
+				<li id="xinwen" class="hblist fl"><!-- 新闻 -->
+					<div class="scroll"></div>
+					<div class="at"><!-- 标题 -->
+						<h2 class="att fl pos-re font30 c6">热播推荐</h2>
+						<a href="mynews.html" target="_self" class="ata fr font20" onclick="window.open('mynews.html','_self')">更多>></a>
+						<ul class="news"></ul>
+					</div>
+				</li>
+				<li id="tiyu" class="hblist fl"><!-- 体育 -->
+					<div class="scroll"></div>
+					<div class="cyf-body">
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">赛事直播</h2>
+							<a href="javascript:void(0)" class="ata fr font20">更多>></a>
+						</div>
+						<div class="w-tiyu">
+							<div class="w-sszb1">
+								<div class="w-sszb-l fl">
+									<span class="sszb-tit fl font22 sszb-tit1">牛仔</span>
+									<div class="w-sszb-r fr">
+										<p class="sszb-r-ss">NFL常规赛</p>
+										<p class="sszb-r-ss">第2节01:18</p>
+									</div>
+									<span class="sszb1-cc">7</span>
+								</div>
+								<div class="w-sszb-l fl ">
+									<span class="sszb-tit fl font22  sszb-tit2">老鹰</span>
+									<p class="sszb-r-zb fr"></p>
+									<span class="sszb1-cc">7</span>
+								</div>
+							</div>
+							<div class="w-sszb1">
+								<div class="yuyue-l">
+									<div class="fl">
+										<span class="sszb-tit font22 sszb-tit3">公牛</span>
+										<span class="sszb-tit font22 sszb-tit4">76人</span>
+									</div>
+									<div class="fr cccccc">
+									</div>
+									<div class="w-sszb-r1 fr">
+										<p class="sszb-r-ss1">11.10 08:00</p>
+										<p class="sszb-r-ss1">NBA常规赛</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">今日热点</h2>
+							<a href="javascript:void(0)" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">全景NBA</h2>
+							<a href="javascript:void(0)" class="ata fr font20">更多>></a>
+						</div>
+					</div>
+				</li>
+				<li id="reju" class="hblist fl"><!-- 热剧 -->
+					<div class="scroll"></div>
+				</li>
+				<li id="dianying" class="hblist fl"><!-- 电影 -->
+					<div class="scroll"></div>
+					<div class="at"><!-- 标题 -->
+						<h2 class="att fl pos-re font30 c6">最新电影</h2>
+						<a href="dianyingku.html" target="_self" class="ata fr font20">更多>></a>
+					</div>
+					<div class="at"><!-- 标题 -->
+						<h2 class="att fl pos-re font30 c6">影集</h2>
+						<a href="dianyingku.html" target="_self" class="ata fr font20">更多>></a>
+					</div>
+					<div class="at"><!-- 标题 -->
+						<h2 class="att fl pos-re font30 c6">王牌栏目</h2>
+						<a href="dianyingku.html" target="_self" class="ata fr font20">更多>></a>
+					</div>
+				</li>
+				<li id="yule" class="hblist fl"><!-- 娱乐 -->
+					<div class="scroll"></div>
+					<div class="cyf-body">
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">娱乐新看点</h2>
+							<a href="yuleku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">热门电影</h2>
+							<a href="dianyingku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">娱乐新看点</h2>
+							<a href="yuleku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">热门电影</h2>
+							<a href="dianyingku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">美女写真</h2>
+							<a href="javascript:void(0)" class="ata fr font20">更多>></a>
+						</div>
+					</div>
+				</li>
+				<li id="zhibo" class="hblist fl"><!-- 直播 -->
+					<div class="H-weishi">
+						<ul class="fl H-weishil font20">
+							<li class="H-wsll H-wtapl">央视频道</li>
+							<li class="H-wsll">地方频道</li>
+							<li class="H-wsll">特色频道</li>
+							<li class="H-wsll">熊猫频道</li>
+						</ul>
+						<div class="H-gund">
+							<ul class="fl H-weishir">
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li id="zhuanti" class="hblist fl"><!-- 专题 -->
+					<div class="scroll"></div>
+					<div class="at"><!-- 标题 -->
+						<h2 class="att fl pos-re font30 c6">热播推荐</h2>
+						<a href="zhuanti.html" target="_self" class="ata fr font20" onclick="window.open('zhuanti.html','_self')">更多>></a>
+						<ul class="news"></ul>
+					</div>
+				</li>
+				<li id="gke" class="hblist fl"><!-- G客 -->
+					<div class="scroll"></div>
+					<div class="hid">
+						<div class="gkenav">
+							<div class="gkeout">
+								<ul class="gkecon">
+									<li class="gkelist fl font24 gkeselect">娱乐首页</li>
+									<li class="gkelist fl font24">独家专享</li>
+									<li class="gkelist fl font24">G客片库</li>
+									<li class="gkelist fl font24">G客大赛</li>
+								</ul>
+							</div>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">动漫搞笑</h2>
+							<a href="dianyingku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+						<div class="at"><!-- 标题 -->
+							<h2 class="att fl pos-re font30 c6">剧情</h2>
+							<a href="yuleku.html" target="_self" class="ata fr font20">更多>></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

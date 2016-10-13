@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>新闻详情</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/clear.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/header.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="header pos-re font30">
+		新闻详情
+		<em class="hback fl"></em>
+		<em class="hfind fr"></em>
+		<div class="hnborder"></div>
+	</div>
+	<!-- 搜索显示 -->
+	<div class="sfind pos-ab">
+		<div class="sfcon">
+			<div class="header font30 pos-re">
+				<em class="hfind pos-ab shfind"></em>
+				<input class="fipt fr" type="text" name="" placeholder="请输入关键字">
+				<em class="fcencel pos-ab">取消</em>
+			</div>
+			<div class="hnborder"></div>
+		</div>
+		<div class="hotf">
+			<dl class="font24 c6">
+				<dt class="hott">热门搜素</dt>
+				<dd data-index="1" class="hotlist pos-re hotthree">奔跑吧，兄弟</dd>
+				<dd data-index="2" class="hotlist pos-re hotthree">琅琊榜</dd>
+				<dd data-index="3" class="hotlist pos-re hotthree">花千骨</dd>
+				<dd data-index="4" class="hotlist pos-re">天天向上</dd>
+				<dd data-index="5" class="hotlist pos-re">非诚勿扰</dd>
+				<dd data-index="6" class="hotlist pos-re">快乐大本营</dd>
+				<dd data-index="7" class="hotlist pos-re">北上广不相信眼泪</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="w-news">
+		
+		<span class="newstj fl font24">热播推荐</span>
+		<a href="JavaScript:void(0);" class="newsgd fr font18">更多>></a>
+		<ul class="news">
+		</ul>
+		<ul class="pinglun">
+			<div class="at"><!-- 标题 -->
+				<h2 class="att fl pos-re font30 c6">网友评论</h2>
+				<a href="###" class="ata fr font20">3.0万>></a>
+			</div>
+			<li class="plli2">
+				<span class="pl1 fl"></span>
+				<span class="pl1tt font16 fl ">我就是阿翔</span>
+				<span class="pl1t font12">2015-09-14</span>
+				<p class="plli2p font16 fl">沙龙的会计法事件的数据的分类数据放到了空间撒地方了空间撒到了非空间撒到了开发家里加福禄寿减肥了三大加福禄寿减肥的路上看解放东路萨克减肥了萨科技的法律思考减肥了萨科技发来撒减肥了深刻解放东路萨克京东发来撒开吉林省就</p>
+				<a href="javascript:;" class="huifu fl" style="margin-left:0.13rem;">查看全部20条回复</a>
+				<a href="javascript:;" class="pldz fr"></a>
+				<a href="javascript:;" class="plfx fr"></a>
+			</li>
+			<li class="postcom">
+				<input type="text" name="" value="写评论" class="postcomipt">
+				<button class="postbtn3 postbtn"></button>
+				<button class="postbtn2 postbtn"></button>
+				<button class="postbtn1 postbtn"></button>
+			</li>
+		</ul>
+
+	</div>
+
+	<script src="js/header.js"></script>
+	<script>
+		//解析跳转
+		$(function(){
+			if(window.location.href.split("html")[1].indexOf("name")==-1){
+				window.open("404.html","_self");
+			}else{
+				var name=unescape(window.location.href).split("=")[1];//解析html地址
+				$.getJSON("js/sql.json",function(json){
+					var xq=json.xinwen;
+					var i=0;
+					for( i=0;i<json.xinwen.length;i++){
+						if(xq[i].name==name){
+							break;
+						}
+					}
+					var h1=$("<h1></h1>").attr("class","newsdetailshead font22").html(xq[i].name);
+					$(".newstj").before(h1);
+					var span1=$("<span>").attr("class","newsdate font16 fl c9").html(xq[i].date);
+					$(".newstj").before(span1);
+					var span2=$("<span>").attr("class","newstime font16 fl c9").html(xq[i].time);
+					$(".newstj").before(span2);
+					var span3=$("<span>").attr("class","newslaiyuan font16 fl c9").html(xq[i].laiyuan);
+					$(".newstj").before(span3);
+					var span4=$("<span>").attr("class","newsjizhe font16 fl c9").html(xq[i].jizhe);
+					$(".newstj").before(span4);
+					var span5=$("<span>").attr("class","newsbofangliang font16 fr c9").html(xq[i].bofangliang+"次播放");
+					$(".newstj").before(span5);
+					var img=$("<img>").attr("class","newsshipin").attr("src",xq[i].src);
+					$(".newstj").before(img);
+					var div=$("<div>").attr("class","newsneirong font16 c").html(xq[i].neirong);
+					$(".newstj").before(div);
+				})
+			}
+		});
+
+		pingLun();//回复评论
+		//推荐热点
+		$(function(){
+			$.getJSON("js/sql.json",function(json){
+				var xw=json.xinwen;
+				for(var i=0;i<4;i++){
+					var li=$("<li></li>").attr("class","newslist fl");
+					var img=$("<img />").attr("class","newstu fl weishi").attr("src",xw[i].src);
+					li.append(img);
+					var div=$("<div></div>").attr("class","fl");
+					var a=$("<a></a>").attr("class","newstit font18").html(xw[i].name);
+					var p=$("<p></p>").attr("class","newscon font16 b3 fl").html(xw[i].neirong);
+					div.append(a);
+					div.append(p);
+					li.append(div);
+					$(".news").append(li);
+				}
+			});
+			$(".news").on("click",".newslist",function(){
+				window.location.href="xinwen.html?name="+escape($(this).find(".newstit").html());
+			});
+		});
+		
+	</script>
+</body>
+</html>
