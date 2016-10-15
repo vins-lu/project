@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		*{padding: 0;margin: 0;}
+		.out{
+			width: 900px;
+			height: 300px;
+			margin: 20px auto;
+			overflow: hidden;
+			text-align: center;
+		}
+		.con{
+			width: 3300px;
+			height: 300px;
+			overflow: hidden;
+			animation: move 8s linear infinite normal;
+			animation-fill-mode:forwards;
+		}
+		.con:hover{
+			animation-play-state:paused;
+			-webkit-animation-play-state:paused;
+		}
+		.con li{
+			float: left;
+			list-style: none;
+			overflow: hidden;
+		}
+		.con img{
+			float: left;
+			width: 300px;
+			height: 300px;
+		}
+
+		.pause{
+			position: relative;
+			height: 60px;
+			display: inline-block;
+			margin: 20px auto;
+			text-align: center;
+		}
+		.pause:before{
+			position: absolute;
+			content: "暂停";
+			display: inline-block;
+			width: 100px;
+			height: 60px;
+			left: 0px;
+			line-height: 60px;
+			font-size: 20px;
+			color: #fff;
+			margin: 0 20px;
+			background: orange;
+			border: none;
+			border-radius: 20px;
+			outline: none;
+		}
+
+		@keyframes move{
+			0%{transform:translateX(0px);}
+			100%{transform:translateX(-2400px);}
+		}
+		.out input{
+			display: none;
+		}
+		.out input:checked ~ .con{
+			animation-play-state:paused;
+			-webkit-animation-play-state:paused;
+		}
+		.out input:checked ~ .pause:before{
+			content: "滚动";
+		}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<input id="ipt1" type="checkbox" name="" value="">
+		<label for="ipt1" class="pause">
+		</label>
+		<ul class="con">
+			<li><img src="img/01.jpg" alt=""></li>
+			<li><img src="img/02.jpg" alt=""></li>
+			<li><img src="img/03.jpg" alt=""></li>
+			<li><img src="img/04.jpg" alt=""></li>
+			<li><img src="img/05.jpg" alt=""></li>
+			<li><img src="img/06.jpg" alt=""></li>
+			<li><img src="img/07.jpg" alt=""></li>
+			<li><img src="img/08.jpg" alt=""></li>
+			
+			<li><img src="img/01.jpg" alt=""></li>
+			<li><img src="img/02.jpg" alt=""></li>
+			<li><img src="img/03.jpg" alt=""></li>
+		</ul>
+	</div>
+
+	<script>
+		/*var con=document.querySelector('.con');
+		var control=document.getElementsByTagName('button');
+		var state=true;
+		var direction=true;
+		control[0].onclick=function(){
+			if(state){
+				this.innerHTML="滚动";
+				con.style.animationPlayState="paused";
+				state=false;
+			}else{
+				this.innerHTML="暂停";
+				con.style.animationPlayState="running";
+				state=true;
+			}		
+		}*/
+	</script>
+</body>
+</html>
